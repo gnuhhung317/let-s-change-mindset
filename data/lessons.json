@@ -1,0 +1,72 @@
+[
+  {
+    "id": "first-principles",
+    "title": "First Principles",
+    "tldr": "Tách mục tiêu đến nguyên tử: mục tiêu thật là tự do; tài nguyên hiện có; nối chúng bằng đòn bẩy.",
+    "body": "## Phân tích mục tiêu từ nguyên tắc cơ bản\n\n**Làm giàu (get rich)**: Bản chất là tạo ra giá trị lớn hơn chi phí sống, tích lũy tài sản qua thời gian. Không phải \"làm việc chăm chỉ\" mà là leverage (tận dụng): Tận dụng kỹ năng để scale (mở rộng) thu nhập, như xây dựng sản phẩm một lần bán nhiều lần (startup, SaaS), hoặc làm việc cho công ty lớn với equity (cổ phần).\n\nTrong IT, làm giàu thường đến từ:\n- Lương cao từ remote job ở Mỹ/EU (có thể 100k-200k USD/năm sau 5-10 năm)\n- Khởi nghiệp (build app/cloud service)\n- Đầu tư (crypto, stock) dựa trên kiến thức IT\n\n**Trở thành global citizen**: Bản chất là tự do di chuyển mà không bị ràng buộc bởi quốc tịch hoặc visa. Điều này yêu cầu passport mạnh, kỹ năng ngôn ngữ, mạng lưới toàn cầu và visa linh hoạt.\n\n**Làm việc remote và sống abroad**: Bản chất là decoupling (tách rời) công việc khỏi vị trí địa lý. Yêu cầu kỹ năng có nhu cầu cao toàn cầu, portfolio chứng minh giá trị, và platform để apply job remote.",
+    "tags": ["core20", "mindset", "leverage", "first-principles"],
+    "context": "deepwork",
+    "weight": 4,
+    "actionPrompt": "Hôm nay phân tích 1 mục tiêu thành các nguyên tử cơ bản nhất?"
+  },
+  {
+    "id": "leverage-over-hardwork",
+    "title": "Leverage > Hard work",
+    "tldr": "Thu nhập scale bằng sản phẩm/equity/remote US-EU, không chỉ chăm chỉ tuyến tính.",
+    "body": "## Tại sao Leverage quan trọng hơn Hard Work\n\n**Hard work is linear**: Bạn làm việc 2x chăm chỉ → thu nhập tăng 2x (nếu may mắn). Điều này có ceiling (trần) vì bạn chỉ có 24h/ngày.\n\n**Leverage is exponential**: Một sản phẩm được tạo 1 lần có thể bán cho hàng triệu người. Một skill được học 1 lần có thể apply cho nhiều dự án.\n\n### Các loại Leverage trong IT:\n\n1. **Code Leverage**: Viết code 1 lần, chạy vô hạn. Ví dụ: SaaS tool, mobile app, automation script.\n\n2. **Network Leverage**: 1 connection tốt có thể mở ra 10 cơ hội khác. LinkedIn, GitHub, community.\n\n3. **Capital Leverage**: Dùng tiền để tạo ra nhiều tiền hơn. Đầu tư vào startup, crypto, real estate.\n\n4. **Knowledge Leverage**: Học 1 framework, apply cho nhiều project. Học cloud một lần, dùng cho mọi startup.\n\n### Action plan:\n- Build products, not just services\n- Focus on high-value skills (AI, cloud, blockchain)\n- Network strategically with industry leaders\n- Reinvest earnings into assets, not expenses",
+    "tags": ["core20", "leverage", "scale", "income"],
+    "context": "deepwork",
+    "weight": 4,
+    "actionPrompt": "Hôm nay tạo ra 1 asset thay vì chỉ bán thời gian?"
+  },
+  {
+    "id": "global-citizen-blocks",
+    "title": "Global Citizen Blocks",
+    "tldr": "Passport/visa, ngôn ngữ, network, visa nomad → tự do di chuyển.",
+    "body": "## 4 Building Blocks của Global Citizen\n\n### 1. **Passport Power**\nViệt Nam passport rank thấp (90+), hạn chế visa-free travel.\n- **Short-term**: Apply visa nomad (Estonia e-Residency, Portugal D7)\n- **Long-term**: Dual citizenship qua investment (Golden Visa) hoặc naturalization\n- **Target countries**: Portugal, Canada, Singapore, New Zealand\n\n### 2. **Language Leverage**\n- **English**: Must-have cho remote work global\n- **+1 Language**: Spanish (Americas), German (EU), Mandarin (Asia)\n- **Technical English**: Học vocabulary IT-specific cho interview\n\n### 3. **Global Network**\n- **Online**: LinkedIn, X, GitHub, Discord communities\n- **Offline**: Attend conferences, meetups, hackathons\n- **Strategy**: Give value first (help others), ask later\n\n### 4. **Digital Nomad Infrastructure**\n- **Legal**: Tax residency, visa status, work permits\n- **Financial**: Multi-currency accounts, crypto wallets\n- **Practical**: Travel insurance, accommodation network\n\n### Roadmap:\n1. **0-6 months**: Perfect English, build online presence\n2. **6-18 months**: Apply remote jobs, network globally\n3. **18+ months**: Establish residency abroad, optimize taxes",
+    "tags": ["core20", "global", "citizenship", "visa", "travel"],
+    "context": "commute",
+    "weight": 4,
+    "actionPrompt": "Hôm nay cải thiện 1 block nào để tự do di chuyển hơn?"
+  },
+  {
+    "id": "cloud-backend-atoms",
+    "title": "Backend/Cloud = Nguyên tử",
+    "tldr": "Dùng cloud để scale cho hàng triệu user; backend là lõi leverage.",
+    "body": "## Tại sao Backend/Cloud là \"Nguyên tử\" của IT\n\n### **Backend = Foundation of Scale**\nMọi app thành công đều cần backend mạnh:\n- **WhatsApp**: 50 engineers phục vụ 1 tỷ users\n- **Instagram**: Sold for $1B với team <20 người\n- **Key**: Backend architecture tốt = scale without linear cost\n\n### **Cloud = Infinite Resources**\nCloud transforms hardware limitations thành software problems:\n- **Before**: Cần $100K server để handle 1M users\n- **Now**: Pay-as-you-scale, từ $0 đến $∞\n- **Leverage**: AWS Lambda functions chỉ charge khi chạy\n\n### **Why This Matters for You**\n1. **High Demand**: Every company needs cloud migration\n2. **Remote-Friendly**: Cloud work is location-independent\n3. **Scalable Income**: Consulting fees $100-200/hour\n4. **Startup Ready**: Can build MVP with $50/month\n\n### **Learning Path**\n1. **Master one cloud**: AWS (market leader) or GCP (AI-focused)\n2. **Learn containers**: Docker → Kubernetes\n3. **Database skills**: PostgreSQL, Redis, MongoDB\n4. **API design**: REST, GraphQL, microservices\n5. **DevOps basics**: CI/CD, monitoring, logging\n\n### **Portfolio Projects**\n- **Beginner**: Todo API with authentication\n- **Intermediate**: Real-time chat with WebSocket\n- **Advanced**: Microservices with API gateway\n\nCloud + Backend = Your ticket to $100K+ remote jobs.",
+    "tags": ["core20", "cloud", "backend", "scale", "technical"],
+    "context": "deepwork",
+    "weight": 4,
+    "actionPrompt": "Hôm nay deploy 1 service lên cloud để thực hành scale?"
+  },
+  {
+    "id": "risk-assets",
+    "title": "Rủi ro & Tài sản",
+    "tldr": "AI thay thế việc lặp lại; hãy xây \"asset\" (SaaS, portfolio), đừng chỉ bán giờ công.",
+    "body": "## AI Revolution: Thay đổi game rules\n\n### **Jobs AI sẽ thay thế TRƯỚC**\n- **Repetitive coding**: Convert design to HTML, basic CRUD\n- **Junior tasks**: Bug fixes, simple features\n- **Template work**: WordPress themes, basic websites\n\n### **Jobs AI KHUYẾN KHÍCH**\n- **Creative problem-solving**: System architecture, complex algorithms\n- **Human interaction**: Client consultation, team leadership\n- **Domain expertise**: Healthcare IT, fintech, AI ethics\n\n### **Assets vs. Jobs Strategy**\n\n**❌ Job Mindset (Risky)**:\n- Sell time for money (linear income)\n- Depend on employer for security\n- Skills become obsolete → unemployed\n\n**✅ Asset Mindset (Antifragile)**:\n- Build products that generate passive income\n- Own equity in growing companies\n- Create systems that work without you\n\n### **Types of Assets to Build**\n\n1. **Digital Products**\n   - SaaS tools ($50-500/month recurring)\n   - Online courses ($500-5000 one-time)\n   - Mobile apps (freemium model)\n\n2. **Investment Assets**\n   - Index funds (10% annual return)\n   - Real estate (rental income)\n   - Crypto (high risk, high reward)\n\n3. **Personal Brand**\n   - YouTube channel (ad revenue)\n   - Newsletter (sponsorship deals)\n   - Consulting business ($100-300/hour)\n\n### **Action Plan**\n- **80% time**: Build skills + income\n- **20% time**: Build assets for future\n- **Reinvest profits**: From job into assets\n- **Diversify**: Multiple income streams",
+    "tags": ["core20", "risk", "ai", "assets", "future"],
+    "context": "night",
+    "weight": 4,
+    "actionPrompt": "Hôm nay làm gì để tạo asset thay vì chỉ bán thời gian?"
+  },
+  {
+    "id": "roadmap-3-stages",
+    "title": "Lộ trình 3 chặng",
+    "tldr": "0–6m: core skill → 6–18m: remote/freelance → 18m+: scale (SaaS, đầu tư, dual path).",
+    "body": "## The 3-Stage Roadmap to Freedom\n\n### **Stage 1: Foundation (0-6 months)**\n**Goal**: Master core skills + build portfolio\n\n**Tech Stack to Master**:\n- **Backend**: Node.js/Python + PostgreSQL\n- **Cloud**: AWS basics (EC2, S3, RDS, Lambda)\n- **Frontend**: React/Vue (enough to build full-stack)\n- **Tools**: Git, Docker, basic CI/CD\n\n**Portfolio Projects**:\n1. **API Service**: Authentication + CRUD operations\n2. **Full-stack App**: Todo/Blog with database\n3. **Cloud Deployment**: Host on AWS/Vercel\n\n**Metrics to Track**:\n- GitHub commits: 3-5/week\n- Completed projects: 3 substantial ones\n- Certifications: 1 cloud cert (AWS Developer)\n\n### **Stage 2: Monetize (6-18 months)**\n**Goal**: Generate income from skills\n\n**Remote Work Strategy**:\n- **Freelance platforms**: Upwork, Toptal, X-Team\n- **Target clients**: US/EU startups, agencies\n- **Pricing**: Start $30-50/hour → grow to $75-100/hour\n\n**Geographic Arbitrage**:\n- Live in Vietnam (low cost): $1000/month\n- Earn in USD (high rate): $5000-8000/month\n- **Profit margin**: 75-85%\n\n**Skills to Add**:\n- **Communication**: Technical writing, client calls\n- **Business**: Understanding startup metrics, MVP development\n- **Specialization**: Pick niche (fintech, healthcare, AI tools)\n\n### **Stage 3: Scale (18+ months)**\n**Goal**: Multiple income streams + location independence\n\n**Dual Path Strategy**:\n1. **Employee track**: Senior dev at remote company ($80-150K)\n2. **Entrepreneur track**: SaaS products + investments\n\n**SaaS Ideas** (based on your expertise):\n- **Developer tools**: API monitoring, deployment automation\n- **Business tools**: CRM for SMEs, inventory management\n- **AI-powered**: Code review tools, automated testing\n\n**Investment Strategy**:\n- **Index funds**: 40% (stable growth)\n- **Individual stocks**: 30% (tech companies you understand)\n- **Crypto**: 20% (BTC/ETH for inflation hedge)\n- **Real estate**: 10% (REITs or rental property)\n\n**Global Citizen Progress**:\n- Apply for digital nomad visas\n- Establish tax residency in low-tax country\n- Build international network\n- Consider dual citizenship pathway",
+    "tags": ["core20", "roadmap", "career", "planning", "timeline"],
+    "context": "deepwork",
+    "weight": 4,
+    "actionPrompt": "Hôm nay làm gì để tiến tới stage tiếp theo?"
+  },
+  {
+    "id": "mindset-experiment",
+    "title": "Mindset = Thử nghiệm",
+    "tldr": "Mọi thứ là experiment: test nhỏ, đo, pivot; fail = dữ liệu, không bản án.",
+    "body": "## Scientific Mindset for Life\n\n### **Reframe: Life as Laboratory**\n\n**Traditional Mindset** 😰:\n- Fear of failure → Paralysis\n- Need perfect plan → Never start\n- One path only → All eggs in one basket\n\n**Experimental Mindset** 🧪:\n- Failure = Data → Learning opportunity\n- Test small → Rapid iteration\n- Multiple hypotheses → Portfolio approach\n\n### **The Experiment Framework**\n\n1. **Hypothesis**: \"If I do X, then Y will happen\"\n2. **Test Design**: Small, measurable, time-bound\n3. **Metrics**: How will you know if it worked?\n4. **Timeline**: When will you evaluate results?\n5. **Pivot Criteria**: What would make you change course?\n\n### **Real Examples**\n\n**Experiment**: \"Remote work suits me\"\n- **Test**: Apply to 10 remote jobs this month\n- **Metric**: Interview rate, comfort level during calls\n- **Timeline**: 30 days\n- **Pivot**: If <20% response rate, improve portfolio\n\n**Experiment**: \"SaaS can generate passive income\"\n- **Test**: Build MVP in 2 weeks, get 100 users\n- **Metric**: User engagement, willingness to pay\n- **Timeline**: 60 days\n- **Pivot**: If <5% engagement, try different problem\n\n**Experiment**: \"Living in Portugal works for me\"\n- **Test**: 3-month stay with remote work\n- **Metric**: Productivity, happiness, cost of living\n- **Timeline**: 90 days\n- **Pivot**: If unhappy or too expensive, try another country\n\n### **Anti-Pattern: Analysis Paralysis**\n\n❌ **Wrong**: Research for 6 months before starting\n✅ **Right**: Research for 1 week, start small experiment\n\n❌ **Wrong**: Wait for perfect conditions\n✅ **Right**: Start with constraints, improve iteratively\n\n❌ **Wrong**: Commit to 5-year plan\n✅ **Right**: Plan next experiment based on results\n\n### **Tools for Experimentation**\n\n- **Journal**: Track hypotheses and results\n- **Metrics Dashboard**: Simple spreadsheet or Notion\n- **Review Cycles**: Weekly reflection, monthly pivot points\n- **Feedback Loops**: Ask users, mentors, peers for input\n\n### **The Compound Effect**\n\nSmall experiments → Better decisions → Faster learning → Bigger opportunities → Exponential growth\n\n**Start today**: Pick one area of your life and design a 2-week experiment.",
+    "tags": ["core20", "mindset", "experiment", "learning", "pivot"],
+    "context": "night",
+    "weight": 4,
+    "actionPrompt": "Hôm nay thiết kế 1 thử nghiệm nhỏ cho mục tiêu nào đó?"
+  }
+]

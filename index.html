@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindset Lessons</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .context-selector {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+        
+        .context-selector option {
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .lesson-card {
+            padding: 40px;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .lesson-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .lesson-tldr {
+            font-size: 1.3em;
+            line-height: 1.6;
+            color: #555;
+            text-align: center;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        
+        .expand-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            align-self: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .expand-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .lesson-body {
+            display: none;
+            margin-top: 20px;
+            line-height: 1.8;
+            color: #444;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .lesson-body.expanded {
+            display: block;
+        }
+        
+        .lesson-body h2 {
+            color: #2c3e50;
+            margin: 20px 0 10px 0;
+        }
+        
+        .lesson-body h3 {
+            color: #34495e;
+            margin: 15px 0 8px 0;
+        }
+        
+        .lesson-body ul {
+            margin: 10px 0 10px 20px;
+        }
+        
+        .lesson-body strong {
+            color: #2c3e50;
+        }
+        
+        .action-prompt {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        
+        .tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .tag.core20 {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+        }
+        
+        .controls {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            background: #34495e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2c3e50;
+            transform: translateY(-1px);
+        }
+        
+        .btn.core-toggle {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+        
+        .btn.core-toggle.active {
+            background: linear-gradient(45deg, #27ae60, #229954);
+        }
+        
+        .stats {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+        
+        .keyboard-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💡 Mindset Lessons</h1>
+            <select class="context-selector" id="contextSelector">
+                <option value="">Tất cả context</option>
+                <option value="deepwork">Deep-work</option>
+                <option value="commute">Commute</option>
+                <option value="night">Trước khi ngủ</option>
+            </select>
+        </div>
+        
+        <div class="lesson-card">
+            <h2 class="lesson-title" id="lessonTitle">Loading...</h2>
+            
+            <div class="tags-container" id="tagsContainer"></div>
+            
+            <p class="lesson-tldr" id="lessonTldr">Loading...</p>
+            
+            <button class="expand-btn" id="expandBtn">Mở rộng</button>
+            
+            <div class="lesson-body" id="lessonBody"></div>
+            
+            <div class="action-prompt" id="actionPrompt" style="display: none;"></div>
+        </div>
+        
+        <div class="controls">
+            <div class="nav-buttons">
+                <button class="btn" id="prevBtn">← Prev</button>
+                <button class="btn" id="shuffleBtn">🎲 Next/Shuffle</button>
+                <button class="btn core-toggle" id="coreToggle">Core-only</button>
+            </div>
+            <div class="stats" id="stats">1 / 7</div>
+        </div>
+    </div>
+    
+    <div class="keyboard-hint">
+        ← → để lật • C bật/tắt Core-only
+    </div>
+
+    <script>
+        class MindsetApp {
+            constructor() {
+                this.lessons = [];
+                this.currentIndex = 0;
+                this.coreOnlyMode = false;
+                this.filteredLessons = [];
+                this.isExpanded = false;
+                this.currentContext = '';
+                
+                this.init();
+            }
+            
+            async init() {
+                await this.loadLessons();
+                this.setupEventListeners();
+                this.setupKeyboardShortcuts();
+                this.setDailySeed();
+                this.filterLessons();
+                this.displayCurrentLesson();
+            }
+            
+            async loadLessons() {
+                try {
+                    const response = await fetch('./data/lessons.json');
+                    this.lessons = await response.json();
+                } catch (error) {
+                    console.error('Error loading lessons:', error);
+                    this.lessons = [];
+                }
+            }
+            
+            setupEventListeners() {
+                document.getElementById('prevBtn').addEventListener('click', () => this.prevLesson());
+                document.getElementById('shuffleBtn').addEventListener('click', () => this.nextLesson());
+                document.getElementById('coreToggle').addEventListener('click', () => this.toggleCoreMode());
+                document.getElementById('expandBtn').addEventListener('click', () => this.toggleExpand());
+                document.getElementById('contextSelector').addEventListener('change', (e) => this.setContext(e.target.value));
+            }
+            
+            setupKeyboardShortcuts() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.target.tagName === 'SELECT') return;
+                    
+                    switch(e.key.toLowerCase()) {
+                        case 'arrowleft':
+                            e.preventDefault();
+                            this.prevLesson();
+                            break;
+                        case 'arrowright':
+                            e.preventDefault();
+                            this.nextLesson();
+                            break;
+                        case 'c':
+                            e.preventDefault();
+                            this.toggleCoreMode();
+                            break;
+                    }
+                });
+            }
+            
+            setDailySeed() {
+                const today = new Date().toDateString();
+                const seed = this.hashCode(today);
+                this.currentIndex = Math.abs(seed) % this.lessons.length;
+            }
+            
+            hashCode(str) {
+                let hash = 0;
+                for (let i = 0; i < str.length; i++) {
+                    const char = str.charCodeAt(i);
+                    hash = ((hash << 5) - hash) + char;
+                    hash = hash & hash;
+                }
+                return hash;
+            }
+            
+            setContext(context) {
+                this.currentContext = context;
+                this.filterLessons();
+                this.currentIndex = 0;
+                this.displayCurrentLesson();
+            }
+            
+            filterLessons() {
+                let filtered = [...this.lessons];
+                
+                if (this.currentContext) {
+                    filtered = filtered.filter(lesson => lesson.context === this.currentContext);
+                }
+                
+                if (this.coreOnlyMode) {
+                    filtered = filtered.filter(lesson => lesson.tags.includes('core20'));
+                }
+                
+                this.filteredLessons = filtered;
+                
+                if (this.filteredLessons.length === 0) {
+                    this.filteredLessons = this.lessons.filter(lesson => lesson.tags.includes('core20'));
+                }
+                
+                if (this.currentIndex >= this.filteredLessons.length) {
+                    this.currentIndex = 0;
+                }
+            }
+            
+            prevLesson() {
+                this.currentIndex = (this.currentIndex - 1 + this.filteredLessons.length) % this.filteredLessons.length;
+                this.displayCurrentLesson();
+            }
+            
+            nextLesson() {
+                if (this.coreOnlyMode) {
+                    // Pareto 80/20: 80% core, 20% explore
+                    const coreWeight = 0.8;
+                    const shouldShowCore = Math.random() < coreWeight;
+                    
+                    if (shouldShowCore) {
+                        const coreLessons = this.lessons.filter(lesson => lesson.tags.includes('core20'));
+                        const randomIndex = Math.floor(Math.random() * coreLessons.length);
+                        this.currentIndex = this.lessons.findIndex(lesson => lesson.id === coreLessons[randomIndex].id);
+                    } else {
+                        const exploreLessons = this.lessons.filter(lesson => lesson.tags.includes('explore'));
+                        if (exploreLessons.length > 0) {
+                            const randomIndex = Math.floor(Math.random() * exploreLessons.length);
+                            this.currentIndex = this.lessons.findIndex(lesson => lesson.id === exploreLessons[randomIndex].id);
+                        } else {
+                            this.currentIndex = (this.currentIndex + 1) % this.filteredLessons.length;
+                        }
+                    }
+                } else {
+                    // Regular shuffle
+                    const weights = this.filteredLessons.map(lesson => lesson.weight || 1);
+                    const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+                    let random = Math.random() * totalWeight;
+                    
+                    for (let i = 0; i < weights.length; i++) {
+                        random -= weights[i];
+                        if (random <= 0) {
+                            this.currentIndex = i;
+                            break;
+                        }
+                    }
+                }
+                
+                this.displayCurrentLesson();
+            }
+            
+            toggleCoreMode() {
+                this.coreOnlyMode = !this.coreOnlyMode;
+                const toggle = document.getElementById('coreToggle');
+                toggle.classList.toggle('active', this.coreOnlyMode);
+                toggle.textContent = this.coreOnlyMode ? '✓ Core-only' : 'Core-only';
+                
+                this.filterLessons();
+                this.displayCurrentLesson();
+            }
+            
+            toggleExpand() {
+                this.isExpanded = !this.isExpanded;
+                const body = document.getElementById('lessonBody');
+                const btn = document.getElementById('expandBtn');
+                const actionPrompt = document.getElementById('actionPrompt');
+                
+                if (this.isExpanded) {
+                    body.classList.add('expanded');
+                    btn.textContent = 'Thu gọn';
+                    actionPrompt.style.display = 'block';
+                } else {
+                    body.classList.remove('expanded');
+                    btn.textContent = 'Mở rộng';
+                    actionPrompt.style.display = 'none';
+                }
+            }
+            
+            displayCurrentLesson() {
+                if (this.filteredLessons.length === 0) return;
+                
+                const lesson = this.filteredLessons[this.currentIndex];
+                
+                document.getElementById('lessonTitle').textContent = lesson.title;
+                document.getElementById('lessonTldr').textContent = lesson.tldr;
+                document.getElementById('lessonBody').innerHTML = this.markdownToHtml(lesson.body);
+                document.getElementById('actionPrompt').textContent = lesson.actionPrompt;
+                
+                // Reset expand state
+                this.isExpanded = false;
+                document.getElementById('lessonBody').classList.remove('expanded');
+                document.getElementById('expandBtn').textContent = 'Mở rộng';
+                document.getElementById('actionPrompt').style.display = 'none';
+                
+                // Update tags
+                this.displayTags(lesson.tags);
+                
+                // Update stats
+                document.getElementById('stats').textContent = `${this.currentIndex + 1} / ${this.filteredLessons.length}`;
+            }
+            
+            displayTags(tags) {
+                const container = document.getElementById('tagsContainer');
+                container.innerHTML = '';
+                
+                tags.forEach(tag => {
+                    const tagEl = document.createElement('span');
+                    tagEl.className = `tag ${tag}`;
+                    tagEl.textContent = tag;
+                    container.appendChild(tagEl);
+                });
+            }
+            
+            markdownToHtml(markdown) {
+                return markdown
+                    .replace(/### (.*)/g, '<h3>$1</h3>')
+                    .replace(/## (.*)/g, '<h2>$1</h2>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    .replace(/- (.*)/g, '<li>$1</li>')
+                    .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+                    .replace(/\n\n/g, '</p><p>')
+                    .replace(/^/, '<p>')
+                    .replace(/$/, '</p>')
+                    .replace(/<\/ul><p><\/p><ul>/g, '</ul><ul>');
+            }
+        }
+        
+        // Initialize app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new MindsetApp();
+        });
+    </script>
+</body>
+</html>
